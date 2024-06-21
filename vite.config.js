@@ -16,5 +16,10 @@ export default defineConfig({
     quasar({
       sassVariables: 'src/quasar-variables.sass'
     })
-  ]
+  ],
+  build: {
+    rollupOptions: {
+      external: ['baguettebox.js']
+    }
+  }
 })

@@ -1,7 +1,8 @@
 <template>
     <div class="header">
     <header class="header-nav">
-      <h1>Wahyu Siregar Jurnal Fotografi </h1>
+      <h1>風メモリーズ</h1>
+      <p>By Wahyu Siregar</p>
      <nav class="navigasi">
       <router-link
         to="/"
@@ -84,7 +85,14 @@
 h1 {
     font-family: kanit;
     font-size: 300%;
-    font-weight:500;
+    font-weight:800;
+    
+}
+
+p {
+  font-family: kanit;
+  font-size: 150%;
+  font-weight: 500;
 }
 
 .header-nav {
