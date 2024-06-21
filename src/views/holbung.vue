@@ -12,7 +12,7 @@
   <div class="body-holbung">
     <div class="container">
       <div class="row">
-        <div class="col-md-3" v-for="(image, index) in galleryImages" :key="index">
+        <div class="col-lg-3 col-md-4 col-6" v-for="(image, index) in galleryImages" :key="index">
           <a :href="image.url" data-fancybox="gallery">
             <div class="card mb-4 shadow-sm">
               <img :src="image.url" class="img-fluid" :alt="'Gambar ' + (index + 1)">
@@ -26,7 +26,6 @@
 
 <script>
 import { ref } from 'vue'; 
-
 
 export default {
   setup() {
@@ -55,7 +54,6 @@ export default {
       selectedMenu.value = menu;
     };
 
-
     return {
       selectedMenu,
       menus,
@@ -66,33 +64,35 @@ export default {
 };
 </script>
 
-
-
 <style scoped>
-
 .q-breadcrumbs {
   margin-left: 14%;
-    margin-right: 5%;
-    cursor: pointer;
-    
+  margin-right: 5%;
+  cursor: pointer;
 }
 
 .body-holbung {
   margin: 5%;
-    font-size: small;
+  font-size: small;
 }
 
-.q-breadcrumbs {
-  margin-left: 14%;
-    margin-right: 5%;
-    cursor: pointer;
-    
-}
 .card {
-    transition: transform 0.2s ease;
+  transition: transform 0.2s ease;
 }
 
 .card:hover {
-    transform: scale(1.03);
+  transform: scale(1.03);
+}
+
+.img-fluid {
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 576px) {
+  .img-fluid {
+    max-height: 150px; /* Adjust the height as needed for mobile */
+    object-fit: cover;
+  }
 }
 </style>
