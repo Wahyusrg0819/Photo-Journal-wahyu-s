@@ -13,7 +13,6 @@
     "@popperjs/core": "^2.11.8",
     "@quasar/extras": "^1.16.11",
     "axios": "^1.7.2",
-    "baguettebox.js": "^1.11.1",
     "bootstrap": "^5.3.3",
     "lightgallery": "^2.7.2",
     "photoswipe": "github:dimsemenov/PhotoSwipe",
