@@ -1,0 +1,31 @@
+{
+  "name": "my-photography-journal-2",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@fancyapps/fancybox": "^3.5.7",
+    "@popperjs/core": "^2.11.8",
+    "@quasar/extras": "^1.16.11",
+    "axios": "^1.7.2",
+    "baguettebox.js": "^1.11.1",
+    "bootstrap": "^5.3.3",
+    "lightgallery": "^2.7.2",
+    "photoswipe": "github:dimsemenov/PhotoSwipe",
+    "photoswipe-dynamic-caption-plugin": "^1.2.7",
+    "quasar": "^2.16.4",
+    "vue": "^3.4.21",
+    "vue-router": "^4.3.3"
+  },
+  "devDependencies": {
+    "@quasar/vite-plugin": "^1.7.0",
+    "@vitejs/plugin-vue": "^5.0.4",
+    "sass": "^1.33.0",
+    "vite": "^5.2.0"
+  }
+}
