@@ -23,7 +23,7 @@
                 <li 
                   @click="navigateToHolbung"
                   >
-                  <img src="/public/images/foto1.jpg" alt="Arooj Aftab album cover" />
+                  <img src="/images/foto1.jpg" alt="1" />
                   <span>Huta Holbung</span>
                   <span>10-Juni-2024</span>
                 </li>
