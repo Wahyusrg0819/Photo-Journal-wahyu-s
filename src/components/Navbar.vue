@@ -1,9 +1,29 @@
 <template>
     <div class="header">
     <header class="header-nav">
-      <h1>風メモリーズ</h1>
+      <div class="icon-judul">
+        <h1>風メモリーズ</h1>
+        
+        <a target="_blank" class="icon-instagram">
+        <div class="gap-icon">
+          <a href="https://www.instagram.com/wahyu_shiregaru/">
+            <i class="fab fa-instagram" id="instagram"/>
+           </a>
+          <a href="">
+             <i class="fab fa-facebook" id="facebook"/>
+          </a>
+          <a href="">
+             <i class="fab fa-reddit" id="reddit"/>
+          </a>
+        </div>
+      </a>
+      </div>
       <p>By Wahyu Siregar</p>
+      
+
      <nav class="navigasi">
+      
+      <div class="nav-two">
       <router-link
         to="/"
         class="nav-link"
@@ -34,6 +54,8 @@
           Article
         </button>
       </router-link>
+
+    </div>
     </nav>
     </header>
     </div>
@@ -59,9 +81,55 @@
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
 
+.icon-instagram {
+      display: inline-block;
+      color: #000;
+      text-decoration: none;
+    }
+    
+    /* Unique hover effect */
+    .gap-icon i {
+      transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+    }
+    
+    /* Instagram icon */
+    #instagram:hover {
+      background: linear-gradient(45deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent; /* Instagram color */
+      transform: rotate(360deg);
+    }
+    
+    /* Facebook icon */
+    #facebook:hover {
+      color: #3b5998; /* Facebook color */
+      transform: rotate(360deg);
+    }
+    
+    /* Reddit icon */
+    #reddit:hover {
+      color: #ff5700; /* Reddit color */
+      transform: rotate(360deg);
+    }
+
+i{
+  font-size: 40px;
+  color: #000000;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+
+.icon-judul{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .header {
   padding-bottom: 1%;
   margin-bottom: 2%;
+  margin-top: -0.5%;
   position: relative; /* Untuk posisi relatif agar bisa menambahkan efek */
 }
 
@@ -85,9 +153,28 @@
 h1 {
     font-family: kanit;
     font-size: 300%;
-    font-weight:800;
-    
+    font-weight: 800;
+    margin-bottom: -5px;
+    text-shadow: 6px 3px 3px rgba(0, 0, 0, 0.5);
 }
+
+@media (max-width: 480px) {
+  .header {
+    margin-top: 3%;
+  }
+  h1 {
+    font-size: 270%;
+  }
+  i{
+    font-size: 35px;
+  }
+  button {
+    padding: 10px 10px;
+    border-width: 1px;
+    font-size: 15px;
+  }
+}
+
 
 p {
   font-family: kanit;
@@ -104,32 +191,86 @@ p {
 
 .navigasi {
     font-family: kanit;
-    display: flex;
-    justify-content:space-evenly;
-    align-items: center;
-    width: 100%;
+    
 }
 
+.nav-two {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+}
+
+
+
 button {
-  color: #090909;
-  padding: 0.7em 1.7em;
+  font-family: kanit;
+  font-weight: 450;
+  display: inline-block;
+  background-color: white;
+  padding: 10px 30px;
+  border: 1px solid black;
+  border-radius: 500px;
+  border-width: 2px;
+  transition: all 0.2s ease-in;
+  position: relative;
+  overflow: hidden;
   font-size: 16px;
-  font-weight: 500;
-  border-radius: 0.5em;
-  background: #ffffff;
   cursor: pointer;
-  border: 1px solid #ffffff;
-  transition: all 0.3s;
-  box-shadow: 6px 6px 17px hsl(0, 0%, 90%), -6px -6px 17px #ffffff;
+  color: black;
+  z-index: 1;
+}
+
+button:before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%) scaleY(1) scaleX(1.25);
+  top: 100%;
+  width: 140%;
+  height: 180%;
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 50%;
+  border-width: 2px;
+  display: block;
+  transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+  z-index: -1;
+}
+
+button:after {
+  content: "";
+  position: absolute;
+  left: 55%;
+  transform: translateX(-50%) scaleY(1) scaleX(1.45);
+  top: 180%;
+  width: 160%;
+  height: 190%;
+  background-color: black;
+  border-radius: 50%;
+  border-width: 2px;
+  display: block;
+  transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+  z-index: -1;
 }
 
 button:hover {
-  border: 1px solid white;
+  color: white;
+  border: 1px solid black;
+  border-width: 2px;
 }
 
-button:active {
-  box-shadow: 4px 4px 17px #c5c5c5, -4px -4px 17px #ffffff;
+button:hover:before {
+  top: -35%;
+  background-color: black;
+  transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
 }
+
+button:hover:after {
+  top: -45%;
+  background-color: black;
+  transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+}
+
 
 
   </style>

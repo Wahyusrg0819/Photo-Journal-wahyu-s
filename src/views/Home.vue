@@ -44,9 +44,32 @@
                 </ol>
               </div>
             </section>
+            
             <div class="q-pa-md">
-              <q-carousel animated v-model="slide" arrows infinite class="custom-carousel">
-                <q-carousel-slide v-for="(image, index) in articleCarouselImages" :key="index" :name="index + 1" :img-src="image.url" />
+              <q-carousel 
+              animated 
+              v-model="slide" 
+              autoslide="true"
+              transition="fade"
+              :interval="2" 
+              :autoplay="true" 
+              :autoplay-hover="true" 
+              :autoplay-pause-on-hover="true" 
+              :autoplay-pause-on-last-slide="true"
+              arrows 
+              infinite 
+              class="custom-carousel"
+              >
+              
+              
+                <q-carousel-slide 
+                v-for="(image, index) in articleCarouselImages" 
+                :key="index" 
+                :name="index + 1" 
+                :img-src="image.url" 
+                
+                />
+                
               </q-carousel>
             </div>
           </div>
@@ -86,13 +109,14 @@
       ];
   
       const photoCarouselImages = [
-        { url: '/images/foto1.jpg' },
+        { url: '/images/foto11.jpg' },
         { url: '/images/foto2.jpg' },
         { url: '/images/foto3.jpg' },
         { url: '/images/foto4.jpg' }
       ];
   
       const articleCarouselImages = [
+        { url: '/images/foto12.jpg' },
         { url: '/images/foto5.jpg' },
         { url: '/images/foto6.jpg' },
         { url: '/images/foto7.jpg' },
@@ -198,8 +222,7 @@
 
 
 .body-home {
-    margin: 5%;
-    font-size: small;
+    margin: 2%;
 }
 
 @media (max-width: 768px) {
@@ -207,6 +230,9 @@
         min-width: auto;
         max-width: auto;
         border-radius: 0;
+    }
+    .body-home {
+    margin: 4%;
     }
 
     .container-nav {

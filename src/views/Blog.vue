@@ -54,7 +54,7 @@ import { ref } from 'vue'
 }
 
 .body-artikel {
-  margin: 5%;
+  margin: 1%;
   font-size: small;
   text-align: center;
 }

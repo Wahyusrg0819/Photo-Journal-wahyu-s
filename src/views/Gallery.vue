@@ -1,101 +1,74 @@
 <template>
-    <q-breadcrumbs gutter="xs">
-        <q-breadcrumbs-el 
-          to="/"
-          label="Home" 
-          :class="{ 'active': 
-          selectedMenu === 'Home' }"
-          @click.native="setActiveMenu('Home')" 
-          />
-          <q-breadcrumbs-el 
-          to="/gallery"
-          label="Galeri" 
-          :class="{ 'active': selectedMenu === 'Galeri' }"
-          @click.native="setActiveMenu('Galeri')"
-          />
-      </q-breadcrumbs>
+  <q-breadcrumbs gutter="xs">
+    <q-breadcrumbs-el 
+      v-for="item in breadcrumbs" 
+      :key="item.label"
+      :to="item.to"
+      :label="item.label" 
+      :class="{ 'active': selectedMenu === item.label }"
+      @click.native="setActiveMenu(item.label)" 
+    />
+  </q-breadcrumbs>
 
   <div class="body-galeri">
     <main>
       <div class="wrapper">
-              <ol reversed start="5">
-                
-                <li 
-                  @click="navigateToHolbung"
-                  >
-                  <img src="/images/foto1.jpg" alt="1" />
-                  <span>Huta Holbung</span>
-                  <span>10-Juni-2024</span>
-                </li>
-                <li>
-                  <img src="https://assets.codepen.io/85648/deafheaven.webp"  alt="deafheaven album cover"/>
-                  <span>Jakarta</span>
-                  <span>10-Juni-2024</span>
-                </li>
-                <li>
-                  <img src="https://assets.codepen.io/85648/deafheaven.webp"  alt="deafheaven album cover"/>
-                  <span>PekanBaru</span>
-                  <span>10-Juni-2024</span>
-                </li>
-                <li>
-                  <img src="https://assets.codepen.io/85648/deafheaven.webp"  alt="deafheaven album cover"/>
-                  <span>Jepang</span>
-                  <span>10-Juni-2024</span>
-                </li>
-                <li>
-                  <img src="https://assets.codepen.io/85648/deafheaven.webp"  alt="deafheaven album cover"/>
-                  <span>Medan</span>
-                  <span>10-Juni-2024</span>
-                </li>
-                <li>
-                  <img src="https://assets.codepen.io/85648/deafheaven.webp"  alt="deafheaven album cover"/>
-                  <span>Indonesia</span>
-                  <span>10-Juni-2024</span>
-                </li>
-                </ol>            
+        <ol reversed start="5">
+          <li 
+            v-for="(item, index) in galleryItems" 
+            :key="index"
+            @click="item.onClick && item.onClick()"
+          >
+            <img :src="item.imgSrc" :alt="item.imgAlt" />
+            <span>{{ item.location }}</span>
+            <span>{{ item.date }}</span>
+          </li>
+        </ol>            
       </div>
     </main>
-</div>
-
+  </div>
 </template>
   
 <script>
- import { ref } from 'vue'
+import { ref } from 'vue'
 
 export default {
-   name: 'Navbar',
-   data() {
-     return {
-       selectedMenu: 'Home'
-     }
-   },
-   methods: {
-     setActiveMenu(menu) {
-       this.selectedMenu = menu;
-     }
-   },
-   setup () {
-   return {
-     slide: ref(1),
-     autoplay: ref(true)
-     }
-   },
-   methods: {
+  name: 'Navbar',
+  data() {
+    return {
+      selectedMenu: 'Home',
+      breadcrumbs: [
+        { label: 'Home', to: '/' },
+        { label: 'Galeri', to: '/gallery' }
+      ],
+      galleryItems: [
+        { imgSrc: '/images/foto1.jpg', imgAlt: '1', location: 'Huta Holbung', date: '10-Juni-2024', onClick: this.navigateToHolbung },
+        { imgSrc: '', imgAlt: 'deafheaven album cover', location: 'Jakarta', date: '10-Juni-2024' },
+        { imgSrc: '', imgAlt: 'deafheaven album cover', location: 'PekanBaru', date: '10-Juni-2024' },
+        { imgSrc: '', imgAlt: 'deafheaven album cover', location: 'Jepang', date: '10-Juni-2024' },
+        { imgSrc: '', imgAlt: 'deafheaven album cover', location: 'Medan', date: '10-Juni-2024' },
+        { imgSrc: '', imgAlt: 'deafheaven album cover', location: 'Indonesia', date: '10-Juni-2024' }
+      ]
+    };
+  },
+  methods: {
+    setActiveMenu(menu) {
+      this.selectedMenu = menu;
+    },
     navigateToHolbung() {
       this.$router.push('/holbung');
       this.setActiveMenu('holbung'); // Set active menu if needed
-    },
-    setActiveMenu(menu) {
-      this.selectedMenu = menu; // Assuming you have a data property named selectedMenu
     }
   },
-  data() {
+  setup () {
     return {
-      selectedMenu: ''
-    };
+      slide: ref(1),
+      autoplay: ref(true)
+    }
   }
- };
+};
 </script>
+
   
 <style scoped>
 .q-breadcrumbs {
@@ -106,7 +79,7 @@ export default {
 }
 
 .body-galeri {
-  margin: 5%;
+  margin: 1%;
   font-size: small;
 }
 

@@ -30,6 +30,7 @@ import { ref } from 'vue';
 export default {
   setup() {
     const selectedMenu = ref('Home'); 
+    
 
     const menus = [
       { label: 'Home', to: '/' },
@@ -72,7 +73,7 @@ export default {
 }
 
 .body-holbung {
-  margin: 5%;
+  margin: 1%;
   font-size: small;
 }
 
