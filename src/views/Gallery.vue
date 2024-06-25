@@ -13,13 +13,15 @@
   <div class="body-galeri">
     <main>
       <div class="wrapper">
-        <ol reversed start="5">
+        <ol auto start="8">
           <li 
             v-for="(item, index) in galleryItems" 
             :key="index"
             @click="item.onClick && item.onClick()"
           >
-            <img :src="item.imgSrc" :alt="item.imgAlt" />
+            <img 
+            :src="item.imgSrc" 
+            :alt="item.imgAlt"  />
             <span>{{ item.location }}</span>
             <span>{{ item.date }}</span>
           </li>
@@ -42,12 +44,12 @@ export default {
         { label: 'Galeri', to: '/gallery' }
       ],
       galleryItems: [
-        { imgSrc: '/images/foto1.jpg', imgAlt: '1', location: 'Huta Holbung', date: '10-Juni-2024', onClick: this.navigateToHolbung },
-        { imgSrc: '', imgAlt: 'deafheaven album cover', location: 'Jakarta', date: '10-Juni-2024' },
-        { imgSrc: '', imgAlt: 'deafheaven album cover', location: 'PekanBaru', date: '10-Juni-2024' },
-        { imgSrc: '', imgAlt: 'deafheaven album cover', location: 'Jepang', date: '10-Juni-2024' },
-        { imgSrc: '', imgAlt: 'deafheaven album cover', location: 'Medan', date: '10-Juni-2024' },
-        { imgSrc: '', imgAlt: 'deafheaven album cover', location: 'Indonesia', date: '10-Juni-2024' }
+        { imgSrc: '/images/foto2.jpg', imgAlt: '1', location: 'Huta Holbung', date: '10-Juni-2024', onClick: this.navigateToHolbung },
+        { imgSrc: '/images/foto3.jpg', imgAlt: 'deafheaven album cover', location: 'Jakarta', date: '10-Juni-2024' },
+        { imgSrc: '/images/foto6.jpg', imgAlt: 'deafheaven album cover', location: 'PekanBaru', date: '10-Juni-2024' },
+        { imgSrc: '/images/foto7.jpg', imgAlt: 'deafheaven album cover', location: 'Jepang', date: '10-Juni-2024' },
+        { imgSrc: '/images/foto10.jpg', imgAlt: 'deafheaven album cover', location: 'Medan', date: '10-Juni-2024' },
+        { imgSrc: '/images/foto12.jpg', imgAlt: 'deafheaven album cover', location: 'Indonesia', date: '10-Juni-2024' }
       ]
     };
   },

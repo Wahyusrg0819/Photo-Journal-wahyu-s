@@ -2,22 +2,20 @@
     <div class="header">
     <header class="header-nav">
       <div class="icon-judul">
-        <h1>風メモリーズ</h1>
-        
-        <a target="_blank" class="icon-instagram">
-        <div class="gap-icon">
-          <a href="https://www.instagram.com/wahyu_shiregaru/">
-            <i class="fab fa-instagram" id="instagram"/>
-           </a>
-          <a href="">
-             <i class="fab fa-facebook" id="facebook"/>
-          </a>
-          <a href="">
-             <i class="fab fa-reddit" id="reddit"/>
-          </a>
-        </div>
-      </a>
-      </div>
+  <h1>風メモリーズ</h1>
+  <div class="social-icons">
+    <a href="https://www.instagram.com/wahyu_shiregaru/" target="_blank">
+      <i class="fab fa-instagram" id="instagram"></i>
+    </a>
+    <a href="#">
+      <i class="fab fa-facebook" id="facebook"></i>
+    </a>
+    <a href="#">
+      <i class="fab fa-reddit" id="reddit"></i>
+    </a>
+  </div>
+</div>
+
       <p>By Wahyu Siregar</p>
       
 
@@ -169,10 +167,23 @@ h1 {
     font-size: 35px;
   }
   button {
-    padding: 10px 10px;
+    padding: 5px 10px;
     border-width: 1px;
-    font-size: 15px;
+    font-size: 5px;
   }
+
+  .icon-judul {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Mengatur agar konten berada di tengah */
+  }
+
+  .social-icons {
+    display: flex;
+    justify-content: center; /* Mengatur agar ikon-ikon berada di tengah */
+    margin-bottom: 5px; /* Atur margin jika diperlukan */
+  }
+  
 }
 
 

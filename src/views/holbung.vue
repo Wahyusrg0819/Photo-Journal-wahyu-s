@@ -10,15 +10,13 @@
     />
   </q-breadcrumbs>
   <div class="body-holbung">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-3 col-md-4 col-6" v-for="(image, index) in galleryImages" :key="index">
-          <a :href="image.url" data-fancybox="gallery">
-            <div class="card mb-4 shadow-sm">
-              <img :src="image.url" class="img-fluid" :alt="'Gambar ' + (index + 1)">
-            </div>
-          </a>
-        </div>
+    <div class="grid-container">
+      <div class="grid-item" v-for="(image, index) in galleryImages" :key="index">
+        <a :href="image.url" data-fancybox="gallery">
+          <div class="card">
+            <img :src="image.url" class="mb-4" :alt="'Gambar ' + (index + 1)">
+          </div>
+        </a>
       </div>
     </div>
   </div>
@@ -31,7 +29,6 @@ export default {
   setup() {
     const selectedMenu = ref('Home'); 
     
-
     const menus = [
       { label: 'Home', to: '/' },
       { label: 'Galeri', to: '/gallery' },
@@ -65,6 +62,7 @@ export default {
 };
 </script>
 
+
 <style scoped>
 .q-breadcrumbs {
   margin-left: 14%;
@@ -73,11 +71,26 @@ export default {
 }
 
 .body-holbung {
-  margin: 1%;
-  font-size: small;
+  margin-top: 3%;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.grid-container {
+  column-count: 5;
+  column-gap: 20px;
+  grid-template-columns: repeat(auto-fill, 
+  minmax(150px, 1fr));
+  width: 100%;
+}
+
+.grid-item {
+  break-inside: avoid;
+  margin-bottom: 20px;
 }
 
 .card {
+  overflow: hidden;
   transition: transform 0.2s ease;
 }
 
@@ -88,11 +101,33 @@ export default {
 .img-fluid {
   width: 100%;
   height: auto;
+  display: block;
+}
+
+@media (max-width: 1200px) {
+  .grid-container {
+    column-count: 5;
+  }
+}
+
+@media (max-width: 992px) {
+  .grid-container {
+    column-count: 4;
+  }
+}
+
+@media (max-width: 768px) {
+  .grid-container {
+    column-count: 3;
+  }
 }
 
 @media (max-width: 576px) {
+  .grid-container {
+    column-count: 2;
+  }
   .img-fluid {
-    max-height: 150px; /* Adjust the height as needed for mobile */
+    max-height: 150px;
     object-fit: cover;
   }
 }
