@@ -17,7 +17,7 @@
       </q-breadcrumbs>
 
     <div class="body-artikel">
-   <h1>COMINGSOON 😁</h1>
+   <h4>COMINGSOON 😁</h4>
     </div>
 </template>
   
