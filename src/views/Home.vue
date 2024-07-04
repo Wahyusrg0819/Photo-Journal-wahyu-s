@@ -63,7 +63,7 @@
               v-model="slide" 
               autoslide="true"
               transition="fade"
-              :interval="2" 
+              :interval="10" 
               :autoplay="true" 
               :autoplay-hover="true" 
               :autoplay-pause-on-hover="true" 
