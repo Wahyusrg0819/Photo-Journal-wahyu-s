@@ -15,10 +15,8 @@
     </a>
   </div>
 </div>
-
       <p>By Wahyu Siregar</p>
       
-
      <nav class="navigasi">
       
       <div class="nav-two">
@@ -52,6 +50,16 @@
           Article
         </button>
       </router-link>
+      <router-link
+        to="/about"
+        class="nav-link"
+        :class="{ 'active': selectedMenu === 'About' }"
+        @click.native="setActiveMenu('About')"
+        >
+        <button>
+          About
+        </button>
+      </router-link>
 
     </div>
     </nav>
@@ -83,11 +91,13 @@
       display: inline-block;
       color: #000;
       text-decoration: none;
+
     }
     
     /* Unique hover effect */
     .gap-icon i {
       transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+      transform: rotate(0deg);
     }
     
     /* Instagram icon */
@@ -96,6 +106,7 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent; /* Instagram color */
       transform: rotate(360deg);
+
     }
     
     /* Facebook icon */
@@ -115,6 +126,7 @@ i{
   color: #000000;
   margin-left: 10px;
   margin-right: 10px;
+  
 }
 
 
@@ -156,7 +168,7 @@ h1 {
     text-shadow: 6px 3px 3px rgba(0, 0, 0, 0.5);
 }
 
-@media (max-width: 480px) {
+@media (max-width: 460px) {
   .header {
     margin-top: 3%;
   }
@@ -167,7 +179,7 @@ h1 {
     font-size: 35px;
   }
   button {
-    padding: 5px 10px;
+    padding: 10px 15px; 
     border-width: 1px;
     font-size: 5px;
   }
@@ -176,6 +188,7 @@ h1 {
   display: flex;
   flex-direction: column;
   align-items: center; /* Mengatur agar konten berada di tengah */
+
   }
 
   .social-icons {
@@ -219,9 +232,9 @@ button {
   font-weight: 450;
   display: inline-block;
   background-color: white;
-  padding: 10px 30px;
+  padding: 9px 20px;
   border: 1px solid black;
-  border-radius: 500px;
+  border-radius: 1px;
   border-width: 2px;
   transition: all 0.2s ease-in;
   position: relative;

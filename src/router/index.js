@@ -4,6 +4,7 @@ import Gallery from '../views/Gallery.vue'
 import Blog from '../views/Blog.vue'
 import Holbung from '../views/holbung.vue'
 import pekanbaru from '../views/pekanbaru.vue'
+import about from '../views/About.vue'
 
 
 const routes = [
@@ -21,6 +22,11 @@ const routes = [
     path: '/blog',
     name: 'Blog',
     component: Blog
+  },
+  {
+    path: '/about',
+    name: 'About',
+    component: about
   },
   {
     path: '/holbung',
