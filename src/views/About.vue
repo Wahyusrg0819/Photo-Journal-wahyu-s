@@ -35,7 +35,7 @@
 
         <section class="child2">
 
-            <img class="fotome" src="/images/foto1.jpg" alt="me">
+            <img class="fotome" src="/images/fotome.jpg" alt="me">
  
         </section>
     </div>
