@@ -26,8 +26,20 @@
               </div>
             </section>
             <div class="q-pa-md">
-              <q-carousel animated v-model="slide" arrows infinite class="custom-carousel">
-                <q-carousel-slide v-for="(image, index) in photoCarouselImages" :key="index" :name="index + 1" :img-src="image.url" />
+              <q-carousel 
+              animated 
+              v-model="slide" 
+              arrows 
+              infinite 
+              navigation
+              class="custom-carousel"
+              >
+                <q-carousel-slide 
+                v-for="(image, index) in photoCarouselImages" 
+                :key="index" 
+                :name="index + 1" 
+                :img-src="image.url" 
+                />
               </q-carousel>
             </div>
           </div>
@@ -57,6 +69,7 @@
               :autoplay-pause-on-hover="true" 
               :autoplay-pause-on-last-slide="true"
               arrows 
+              navigation
               infinite 
               class="custom-carousel"
               >

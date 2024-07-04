@@ -57,7 +57,7 @@
         @click.native="setActiveMenu('About')"
         >
         <button>
-          About
+          About Me
         </button>
       </router-link>
 
@@ -225,23 +225,17 @@ p {
   width: 100%;
 }
 
-
-
 button {
   font-family: kanit;
   font-weight: 450;
   display: inline-block;
   background-color: white;
-  padding: 9px 20px;
-  border: 1px solid black;
-  border-radius: 1px;
-  border-width: 2px;
+  padding: 9px 20px;  
   transition: all 0.2s ease-in;
   position: relative;
   overflow: hidden;
   font-size: 16px;
   cursor: pointer;
-  color: black;
   z-index: 1;
 }
 
@@ -255,7 +249,6 @@ button:before {
   height: 180%;
   background-color: rgba(0, 0, 0, 0.05);
   border-radius: 50%;
-  border-width: 2px;
   display: block;
   transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
   z-index: -1;
@@ -271,7 +264,6 @@ button:after {
   height: 190%;
   background-color: black;
   border-radius: 50%;
-  border-width: 2px;
   display: block;
   transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
   z-index: -1;
@@ -279,8 +271,6 @@ button:after {
 
 button:hover {
   color: white;
-  border: 1px solid black;
-  border-width: 2px;
 }
 
 button:hover:before {
