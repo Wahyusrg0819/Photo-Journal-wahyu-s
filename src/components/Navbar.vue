@@ -57,7 +57,7 @@
         @click.native="setActiveMenu('About')"
         >
         <button>
-          About Me
+          AboutMe
         </button>
       </router-link>
 
