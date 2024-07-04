@@ -34,9 +34,9 @@
 
 
         <section class="child2">
-
-            <img class="fotome" src="/images/fotome.jpg" alt="me">
- 
+            <a href="/images/fotome.jpg" data-fancybox="gallery" >
+                <img class="fotome" src="/images/fotome.jpg" alt="me">
+            </a>
         </section>
     </div>
 </div>
